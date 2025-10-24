@@ -3,147 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — paulboivin.io</title>
-  <meta name="description" content="About Paul — builder, maker, and explorer. Portfolio, contact, and links." />
-  <meta name="author" content="Paul (paulboivin)" />
-  <meta property="og:title" content="Paul — About" />
-  <meta property="og:description" content="About Paul — builder, maker, and explorer." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://paulboivin.io/" />
-  <meta property="og:image" content="https://placehold.co/1200x630?text=Paul" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="https://placehold.co/32x32" />
+  <title>About — paulboivin</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:#f6f8fa; color:#0b1220; }
+    .container { max-width:720px; margin:2rem auto; padding:0 1rem; }
+    .card { background:#fff; border-radius:10px; padding:1.25rem; box-shadow:0 6px 18px rgba(11,18,32,.06); }
+    nav { margin-bottom:0.75rem; }
+    nav a { margin-right:1rem; color:#0366d6; text-decoration:none; font-weight:500; }
+    h1 { margin-top:0; }
+    h2 { margin-bottom:.25rem; }
+    p.small { color:#556; font-size:.95rem; }
+    ul { padding-left:1.15rem; }
+    .meta { color:#556; font-size:.95rem; margin-bottom:.75rem; }
+    .chips { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem; }
+    .chip { background:rgba(3,102,214,.06); color:#0366d6; padding:.25rem .6rem; border-radius:999px; font-size:.9rem; }
+    a.project { color:#0366d6; text-decoration:none; font-weight:600; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img class="avatar" src="https://placehold.co/200x200?text=PB" alt="Profile picture (placeholder)" />
-        <div>
-          <h1 class="name">Paul Boivin</h1>
-          <p class="handle">@paulboivin</p>
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Resume</a>
+      <a href="/case-study.html">Projects</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <main class="card">
+      <h1>About</h1>
+      <p class="meta">Designer & developer who builds thoughtful, accessible interfaces and small web tools. I enjoy clean UX, reliable engineering, and learning by building.</p>
+
+      <section>
+        <h2>Summary</h2>
+        <p class="small">I work across the front-end stack to design and deliver production-ready websites and apps. My focus is on simplicity, accessibility, and maintainable code. I prefer small teams, clear APIs, and projects that ship value quickly.</p>
+      </section>
+
+      <section style="margin-top:1rem;">
+        <h2>Skills</h2>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Design</span>
+          <span class="chip">Accessibility</span>
         </div>
-      </div>
+      </section>
 
-      <div class="header-actions">
-        <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
-      </div>
-    </div>
-  </header>
+      <section style="margin-top:1rem;">
+        <h2>Selected projects</h2>
+        <ul>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project One</a> — small description about what it does and the impact.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Two</a> — technical focus or interesting decision.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Three</a> — metrics or notable outcome (if any).</li>
+        </ul>
+        <p class="small">Tip: replace these placeholders with links to live sites or GitHub repos.</p>
+      </section>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Hello — I build thoughtful things on the web.</h2>
-      <p class="lead">I'm a developer, designer, and lifelong learner. I ship production-ready apps, tinker with design systems, and write about what I learn.</p>
-
-      <p class="cta">
-        <a class="btn" href="#projects">See projects</a>
-        <a class="btn btn-outline" href="#contact">Get in touch</a>
-      </p>
-    </section>
-
-    <section id="about" class="card">
-      <h3>About me</h3>
-      <p>
-        I focus on building simple, reliable tools and delightful interfaces.
-        I enjoy working across the stack and translating complex problems into clear solutions.
-      </p>
-
-      <p>
-        Quick highlights:
-      </p>
-      <ul class="bullets">
-        <li>5+ years building web apps and APIs</li>
-        <li>Designing accessible, responsive UI</li>
-        <li>Mentoring and writing about engineering best practices</li>
-      </ul>
-
-      <p class="note">Replace this copy with your own short bio — include where you work, what you love building, and a line about your interests outside work.</p>
-    </section>
-
-    <section id="skills" class="card">
-      <h3>Skills & tools</h3>
-      <p class="chips">
-        <span>JavaScript / TypeScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>HTML & CSS</span>
-        <span>Design Systems</span>
-        <span>Accessibility (a11y)</span>
-      </p>
-    </section>
-
-    <section id="projects" class="card">
-      <h3>Selected projects</h3>
-
-      <div class="projects-grid">
-        <article class="project">
-          <h4>Project One</h4>
-          <p>Short description: what it does, who it's for, and why it matters.</p>
-          <p><a href="#" rel="noopener">View project</a></p>
-        </article>
-
-        <article class="project">
-          <h4>Project Two</h4>
-          <p>Short description: a technical highlight or decision you made.</p>
-          <p><a href="#" rel="noopener">View project</a></p>
-        </article>
-
-        <article class="project">
-          <h4>Project Three</h4>
-          <p>Short description: metrics or outcomes if available.</p>
-          <p><a href="#" rel="noopener">View project</a></p>
-        </article>
-      </div>
-
-      <p class="hint">Tip: link these cards to live demos or GitHub repos.</p>
-    </section>
-
-    <section id="contact" class="card">
-      <h3>Contact</h3>
-      <p>If you'd like to work together or just say hi, email me at <a href="mailto:hello@paulboivin.io">hello@paulboivin.io</a> or find me on social media:</p>
-
-      <ul class="social">
-        <li><a href="https://github.com/paulboivin" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/paulboivin" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://twitter.com/paulboivin" rel="noopener">Twitter</a></li>
-      </ul>
-
-      <p class="small">Prefer to use a contact form? Swap the mailto link for a form POST or a serverless function.</p>
-    </section>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Paul Boivin — <a href="/">paulboivin.io</a></p>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle (light/dark)
-    (function() {
-      const button = document.getElementById('theme-toggle');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const stored = localStorage.getItem('site-theme');
-
-      const apply = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        button.textContent = theme === 'dark' ? '☀️' : '🌙';
-        button.setAttribute('aria-pressed', theme === 'dark');
-      };
-
-      const current = stored || (prefersDark ? 'dark' : 'light');
-      apply(current);
-
-      button.addEventListener('click', () => {
-        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('site-theme', next);
-        apply(next);
-      });
-    })();
-  </script>
+      <section style="margin-top:1rem;">
+        <h2>Contact</h2>
+        <p class="small">For work inquiries or quick questions, email <a href="mailto:you@example.com">you@example.com</a> or use the <a href="/contact.html">contact form</a>.</p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
