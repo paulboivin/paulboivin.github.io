@@ -3,27 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — paulboivin</title>
-  <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-           max-width: 900px; margin: 3rem auto; padding: 0 1rem; color:#0b1220; }
-    header { margin-bottom: 1.5rem; }
-    a { color:#0366d6; text-decoration:none; }
-    nav { margin-bottom: 2rem; }
-  </style>
+  <title>About — paulboivin.io</title>
+  <meta name="description" content="About Paul — builder, maker, and explorer. Portfolio, contact, and links." />
+  <meta name="author" content="Paul (paulboivin)" />
+  <meta property="og:title" content="Paul — About" />
+  <meta property="og:description" content="About Paul — builder, maker, and explorer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://paulboivin.io/" />
+  <meta property="og:image" content="https://placehold.co/1200x630?text=Paul" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="https://placehold.co/32x32" />
 </head>
 <body>
-  <header>
-    <h1>About</h1>
-    <nav><a href="/">Home</a></nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="avatar" src="https://placehold.co/200x200?text=PB" alt="Profile picture (placeholder)" />
+        <div>
+          <h1 class="name">Paul Boivin</h1>
+          <p class="handle">@paulboivin</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <p>Welcome — this is a simple About page you can edit. Add more pages, images, or styles as you like.</p>
-    <section>
-      <h2>What this site is</h2>
-      <p>Personal GitHub Pages user site served from the repository root of <strong>paulboivin.github.io</strong>.</p>
+  <main class="container">
+    <section class="hero">
+      <h2>Hello — I build thoughtful things on the web.</h2>
+      <p class="lead">I'm a developer, designer, and lifelong learner. I ship production-ready apps, tinker with design systems, and write about what I learn.</p>
+
+      <p class="cta">
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn btn-outline" href="#contact">Get in touch</a>
+      </p>
     </section>
+
+    <section id="about" class="card">
+      <h3>About me</h3>
+      <p>
+        I focus on building simple, reliable tools and delightful interfaces.
+        I enjoy working across the stack and translating complex problems into clear solutions.
+      </p>
+
+      <p>
+        Quick highlights:
+      </p>
+      <ul class="bullets">
+        <li>5+ years building web apps and APIs</li>
+        <li>Designing accessible, responsive UI</li>
+        <li>Mentoring and writing about engineering best practices</li>
+      </ul>
+
+      <p class="note">Replace this copy with your own short bio — include where you work, what you love building, and a line about your interests outside work.</p>
+    </section>
+
+    <section id="skills" class="card">
+      <h3>Skills & tools</h3>
+      <p class="chips">
+        <span>JavaScript / TypeScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>HTML & CSS</span>
+        <span>Design Systems</span>
+        <span>Accessibility (a11y)</span>
+      </p>
+    </section>
+
+    <section id="projects" class="card">
+      <h3>Selected projects</h3>
+
+      <div class="projects-grid">
+        <article class="project">
+          <h4>Project One</h4>
+          <p>Short description: what it does, who it's for, and why it matters.</p>
+          <p><a href="#" rel="noopener">View project</a></p>
+        </article>
+
+        <article class="project">
+          <h4>Project Two</h4>
+          <p>Short description: a technical highlight or decision you made.</p>
+          <p><a href="#" rel="noopener">View project</a></p>
+        </article>
+
+        <article class="project">
+          <h4>Project Three</h4>
+          <p>Short description: metrics or outcomes if available.</p>
+          <p><a href="#" rel="noopener">View project</a></p>
+        </article>
+      </div>
+
+      <p class="hint">Tip: link these cards to live demos or GitHub repos.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>If you'd like to work together or just say hi, email me at <a href="mailto:hello@paulboivin.io">hello@paulboivin.io</a> or find me on social media:</p>
+
+      <ul class="social">
+        <li><a href="https://github.com/paulboivin" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/paulboivin" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com/paulboivin" rel="noopener">Twitter</a></li>
+      </ul>
+
+      <p class="small">Prefer to use a contact form? Swap the mailto link for a form POST or a serverless function.</p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Paul Boivin — <a href="/">paulboivin.io</a></p>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle (light/dark)
+    (function() {
+      const button = document.getElementById('theme-toggle');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const stored = localStorage.getItem('site-theme');
+
+      const apply = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        button.textContent = theme === 'dark' ? '☀️' : '🌙';
+        button.setAttribute('aria-pressed', theme === 'dark');
+      };
+
+      const current = stored || (prefersDark ? 'dark' : 'light');
+      apply(current);
+
+      button.addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('site-theme', next);
+        apply(next);
+      });
+    })();
+  </script>
 </body>
 </html>
