@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — paulboivin</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:#f6f8fa; color:#0b1220; }
+    .container { max-width:720px; margin:2rem auto; padding:0 1rem; }
+    .card { background:#fff; border-radius:10px; padding:1.25rem; box-shadow:0 6px 18px rgba(11,18,32,.06); }
+    nav { margin-bottom:0.75rem; }
+    nav a { margin-right:1rem; color:#0366d6; text-decoration:none; font-weight:500; }
+    label { display:block; margin-top:.75rem; font-weight:600; }
+    input, textarea { width:100%; padding:.5rem; margin-top:.25rem; border:1px solid #ddd; border-radius:6px; }
+    button { margin-top:.75rem; padding:.6rem .9rem; border:none; background:#0366d6; color:#fff; border-radius:6px; cursor:pointer; }
+    p.small { color:#556; font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Resume</a>
+      <a href="/case-study.html">Case Study</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <main class="card">
+      <h1>Contact</h1>
+      <p class="small">Choose one of the options below to get in touch.</p>
+
+      <section>
+        <h2>Email</h2>
+        <p><a href="mailto:you@example.com">you@example.com</a></p>
+      </section>
+
+      <section>
+        <h2>Message form (static)</h2>
+        <p class="small">Static sites can't receive form POSTs by themselves. You can use a service (Formspree, Getform, Netlify Forms, etc.) or add a mailto link. Below is an example form wired to Formspree — replace the action URL with your form endpoint.</p>
+
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+
+      <section style="margin-top:1rem;">
+        <h2>Other</h2>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
