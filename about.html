@@ -1,176 +1,69 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paul Boivin — paulboivin</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:#f6f8fa; color:#0b1220; }
+    .container { max-width:720px; margin:2rem auto; padding:0 1rem; }
+    .card { background:#fff; border-radius:10px; padding:1.25rem; box-shadow:0 6px 18px rgba(11,18,32,.06); }
+ nav { margin-bottom: 0.75rem; display: flex; justify-content: center; /* centers the links / gap: 1rem; / spacing between links / flex-wrap: wrap; / allow wrapping on narrow viewports */ align-items: center; }
 
-  <!-- Primary SEO / Open Graph -->
-  <title>Paul Boivin — About</title>
-  <link rel="canonical" href="https://paulboivin.github.io/" />
-  <meta name="description" content="About Paul Boivin — Data and Business Intelligence Analyst focusing on KPI monitoring, informative strategic decision-making, and descriptive/predictive data analysis." />
-  <meta property="og:locale" content="en-US" />
-  <meta property="og:site_name" content="Paul Boivin" />
-  <meta property="og:title" content="Paul Boivin" />
-  <meta property="og:url" content="https://paulboivin.github.io/" />
-  <meta property="og:description" content="About me" />
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Person",
-    "name": "Paul Boivin",
-    "url": "https://paulboivin.github.io",
-    "sameAs": []
-  }
-  </script>
-
-  <!-- Feeds & icons -->
-  <link href="https://paulboivin.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Paul Boivin Feed" />
-  <link rel="apple-touch-icon" sizes="57x57" href="https://paulboivin.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="60x60" href="https://paulboivin.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="72x72" href="https://paulboivin.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="76x76" href="https://paulboivin.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="114x114" href="https://paulboivin.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="120x120" href="https://paulboivin.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="144x144" href="https://paulboivin.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="152x152" href="https://paulboivin.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ" />
-  <link rel="apple-touch-icon" sizes="180x180" href="https://paulboivin.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ" />
-  <link rel="icon" type="image/png" href="https://paulboivin.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32" />
-  <link rel="icon" type="image/png" href="https://paulboivin.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192" />
-  <link rel="icon" type="image/png" href="https://paulboivin.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96" />
-  <link rel="icon" type="image/png" href="https://paulboivin.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16" />
-  <link rel="manifest" href="https://paulboivin.github.io/images/manifest.json?v=M44lzPylqQ" />
-  <link rel="mask-icon" href="https://paulboivin.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000" />
-  <link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta http-equiv="cleartype" content="on" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://paulboivin.github.io/assets/css/main.css" />
-  <link rel="stylesheet" href="https://paulboivin.github.io/assets/css/academicons.css" />
-
-  <!-- MathJax configuration (single combined config) -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: { equationNumbers: { autoNumber: "all" } },
-      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true }
-    });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async></script>
-
-  <!-- Small JS improvement: remove no-js class when JS is available -->
-  <script>
-    (function() {
-      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';
-    })();
-  </script>
+nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8px; /* optional — increases click target */ display: inline-block; }
+    h1 { margin-top:0; }
+    h2 { margin-bottom:.25rem; }
+    p.small { color:#556; font-size:.95rem; }
+    ul { padding-left:1.15rem; }
+    .meta { color:#556; font-size:.95rem; margin-bottom:.75rem; }
+    .chips { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem; }
+    .chip { background:rgba(3,102,214,.06); color:#0366d6; padding:.25rem .6rem; border-radius:999px; font-size:.9rem; }
+    a.project { color:#0366d6; text-decoration:none; font-weight:600; }
+  </style>
 </head>
-
 <body>
-  <!--[if lt IE 9]>
-    <div class="notice--danger align-center" style="margin: 0;">
-      You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-    </div>
-  <![endif]-->
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <a href="/about.html">About</a>
+      <a href="/cv_resume.html">CV/Resume</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
 
-  <!-- Masthead / Navigation -->
-  <header class="masthead" role="banner" aria-label="Site masthead">
-    <div class="masthead__inner-wrap">
-      <div class="masthead__menu">
-        <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
-          <button aria-expanded="false" aria-controls="site-nav-list" class="nav-toggle" aria-label="Toggle navigation">
-            <div class="navicon"></div>
-          </button>
+    <main class="card">
+      <h1>About</h1>
+      <p class="meta">Designer & developer who builds thoughtful, accessible interfaces and small web tools. I enjoy clean UX, reliable engineering, and learning by building.</p>
 
-          <ul id="site-nav-list" class="visible-links" aria-hidden="false">
-            <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://paulboivin.github.io/">Paul Boivin</a></li>
-            <li class="masthead__menu-item"><a href="https://paulboivin.github.io/cv_resume/">CV/Resume</a></li>
-            <li class="masthead__menu-item"><a href="https://paulboivin.github.io/projects/">Projects</a></li>
-          </ul>
+      <section>
+        <h2>Summary</h2>
+        <p class="small">I work across the front-end stack to design and deliver production-ready websites and apps. My focus is on simplicity, accessibility, and maintainable code. I prefer small teams, clear APIs, and projects that ship value quickly.</p>
+      </section>
 
-          <ul class="hidden-links hidden" aria-hidden="true"></ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <div id="main" role="main" class="site-main">
-    <!-- Sidebar with author card -->
-    <aside class="sidebar sticky" role="complementary" aria-label="Author information">
-      <div itemscope itemtype="http://schema.org/Person" class="author">
-        <div class="author__avatar">
-          <img src="<-----------------Picture-------------->" alt="Paul Boivin" />
+      <section style="margin-top:1rem;">
+        <h2>Skills</h2>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Design</span>
+          <span class="chip">Accessibility</span>
         </div>
+      </section>
 
-        <div class="author__content">
-          <h3 class="author__name" itemprop="name">Paul Boivin</h3>
-          <p class="author__bio">Data/Business Intelligence Analyst</p>
-        </div>
+      <section style="margin-top:1rem;">
+        <h2>Selected projects</h2>
+        <ul>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project One</a> — small description about what it does and the impact.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Two</a> — technical focus or interesting decision.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Three</a> — metrics or notable outcome (if any).</li>
+        </ul>
+        <p class="small">Tip: replace these placeholders with links to live sites or GitHub repos.</p>
+      </section>
 
-        <div class="author__urls-wrapper">
-          <button class="btn btn--inverse" aria-pressed="false">Follow</button>
-          <ul class="author__urls social-icons" aria-label="Contact and social links">
-            <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> New Hampshire, USA</li>
-            <li><a href="https://www.linkedin.com/in/pauldboivin/"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-            <li><a href="https://public.tableau.com/app/profile/paul.boivin/vizzes"><i class="fab fa-fw fa-tableau" aria-hidden="true"></i> Tableau</a></li>
-          </ul>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Page content -->
-    <article class="page" itemscope itemtype="http://schema.org/CreativeWork" aria-labelledby="page-title">
-      <meta itemprop="headline" content="Paul Boivin" />
-      <meta itemprop="description" content="About me" />
-
-      <div class="page__inner-wrap">
-        <header class="page__header">
-          <h1 id="page-title" class="page__title" itemprop="headline">Paul Boivin</h1>
-        </header>
-
-        <section class="page__content" itemprop="text">
-          <p>About Paul Boivin — Data and Business Intelligence Analyst focusing on KPI monitoring, informative strategic decision-making, and descriptive/predictive data analysis.</p>
-
-          <h2 id="about-me">About Me</h2>
-          <p></p>
-
-          <p></p>
-
-          <p></p>
-
-          <p></p>
-
-          <p>You can connect with me via <a href="https://www.linkedin.com/in/pauldboivin">LinkedIn</a>.</p>
-        </section>
-
-        <footer class="page__meta" aria-hidden="true"></footer>
-      </div>
-    </article>
+      <section style="margin-top:1rem;">
+        <h2>Contact</h2>
+        <p class="small">For work inquiries or quick questions, email <a href="mailto:you@example.com">you@example.com</a> or use the <a href="/contact.html">contact form</a>.</p>
+      </section>
+    </main>
   </div>
-
-  <!-- Footer -->
-  <div class="page__footer" role="contentinfo">
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        <a href="/sitemap/">Sitemap</a>
-
-  <!-- Site JS and analytics -->
-  <script src="https://paulboivin.github.io/assets/js/main.min.js"></script>
-  <script>
-    (function() {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'G-Z5T7FEB8H8']);
-      _gaq.push(['_trackPageview']);
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = (document.location.protocol === 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 </body>
 </html>
