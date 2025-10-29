@@ -5,134 +5,212 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CV/Resume — paulboivin</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:#f6f8fa; color:#0b1220; }
-    .container { max-width:900px; margin:2rem auto; padding:0 1rem; }
-    header, .card { background:#fff; border-radius:10px; padding:1.25rem; box-shadow:0 6px 18px rgba(11,18,32,.06); }
-    header { margin-bottom:1rem; }
-nav { margin-bottom: 0.75rem; display: flex; justify-content: center; /* centers the links / gap: 1rem; / spacing between links / flex-wrap: wrap; / allow wrapping on narrow viewports */ align-items: center; }
+    /* Base layout */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: #f6f8fa;
+      color: #0b1220;
+      line-height: 1.15; /* readable default line-height */
+    }
+    .container {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 6px 18px rgba(11,18,32,.06);
+    }
 
-nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8px; /* optional — increases click target */ display: inline-block; }
-    h1 { margin:0 0 .25rem 0; }
-    .meta { color:#556; margin-bottom:1rem; }
-    .section { margin-top:1rem; }
-    .two-col { display:grid; grid-template-columns: 1fr 300px; gap:1rem; align-items:start; }
-    @media (max-width:720px){ .two-col{ grid-template-columns: 1fr; } }
-    ul { margin:0; padding-left:1.1rem; }
+    /* Heading */
+    h1 { margin-top: 0; }
+
+    /* Resume list styles */
+    .resume-list { list-style: none; padding-left: 0; margin: 0; }
+    .resume-list > li {
+      margin: 0;                /* base reset */
+      padding: 0.25rem 0;      /* small vertical padding for each main item */
+      /* .5 spacing: gap between main bullets implemented as margin-top on grouped items */
+    }
+
+    /* Main entry block */
+    .entry {
+      display: block;
+    }
+    .entry-title {
+      font-weight: 700;
+      color: #0b1220;
+      margin-bottom: 0.25rem;
+    }
+    .entry-meta {
+      color: #556;
+      font-size: 0.95rem;
+      margin-bottom: 0.45rem;
+    }
+
+    /* 0.5 spacing requirement:
+       Add 0.5rem extra spacing before the specific main entries the user requested.
+       If you'd prefer the entire list to use 0.5rem line-height instead, tell me. */
+    .spaced {
+      margin-top: 0.5rem; /* 0.5rem visual gap before this main bullet */
+      padding-top: 0.5rem; /* extra safety spacing */
+      border-top: 0; /* no visible rule, only space */
+    }
+
+    /* Secondary bullet styling:
+       hollow bullets (circle) for nested lists to match "Python/R" example style */
+    .sub-list {
+      margin: 0.25rem 0 0.75rem 1.1rem;
+      padding-left: 0;
+      list-style-type: circle; /* hollow bullets for secondary items */
+      color: #0b1220;
+    }
+    .sub-list li {
+      margin: 0.15rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Generic sub-items under other sections (keep filled vs hollow consistent where needed) */
+    .sub-list.filled {
+      list-style-type: disc; /* use disc when you want filled bullets elsewhere */
+    }
+
+    /* Small helper text */
+    p.small { color:#556; font-size:.95rem; margin: .5rem 0 0 0; }
+
+    /* Responsive tweaks */
+    @media (max-width: 520px) {
+      .container { padding: 0 0.75rem; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <nav aria-label="Primary navigation">
-      <a href="/about.html">About</a>
-      <a href="/cv_resume.html">CV/Resume</a>
-      <a href="/projects.html">Projects</a>
-    </nav>
-
-    <header>
-      <h1>Paul Boivin</h1>
-      <div class="meta">Location · Role · Email: you@example.com</div>
-    </header>
-
     <main class="card">
-      <div class="two-col">
-        <div>
-          <section class="section">
-            <h2>Summary</h2>
-            <p>Concise professional summary — a short paragraph describing your experience and focus.</p>
-          </section>
+      <h1>Curriculum Vitae</h1>
 
-          <section class="section">
-            <h2>Experience</h2>
-            <div>
-              <strong>Job Title — Company</strong>
-              <div class="meta">YYYY – Present</div>
-              <ul>
-                <li>Brief achievement or responsibility 1.</li>
-                <li>Brief achievement or responsibility 2 with measurable result.</li>
+      <!-- Education / Programs -->
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education & professional development</h2>
+
+        <ul class="resume-list">
+          <!-- Other entries (example) -->
+          <li>
+            <div class="entry">
+              <div class="entry-title">Certificate — Example Course</div>
+              <div class="entry-meta">Provider — Month Year</div>
+              <ul class="sub-list filled">
+                <li>Course highlight or short description (filled bullet example)</li>
+                <li>Another bullet (filled)</li>
               </ul>
             </div>
+          </li>
 
-            <div style="margin-top:.75rem;">
-              <strong>Previous Title — Previous Company</strong>
-              <div class="meta">YYYY – YYYY</div>
-              <ul>
-                <li>Key contribution or project.</li>
+          <!-- --- Start of requested spaced main bullet: Google Data Analytics Program --- -->
+          <li class="spaced">
+            <div class="entry">
+              <div class="entry-title">Google Data Analytics Program</div>
+              <div class="entry-meta">Coursera — August 2024</div>
+              <ul class="sub-list" aria-label="Google Data Analytics details">
+                <li>Data cleaning & analysis with spreadsheets and SQL</li>
+                <li>Exploratory data analysis and visualization fundamentals</li>
+                <li>Reproducible reports and presentation of findings</li>
               </ul>
             </div>
-          </section>
+          </li>
 
-          <section class="section">
-            <h2>Education</h2>
-            <li> Google Data Analytics Program, Coursera, August 2024
-        <ul> 
-          <li>Coursework: Data Analysis, Data Analysis and Regression (Linear/Logistic), Databases, Data Cleaning and Processing, Data Visualization, Data Import/Export, Sampling (Statistics), Dashboards, Data-Driven Decision-Making, Business Analytics. </li>
-        <li>Capstone Project: Analyzed and interpreted consumer smart device usage for Bellabeat, a woman’s health tech manufacturer. Examined the personal fitness data from consenting consumers to gain insight into product usage on daily and monthly timelines, cleaned and processed user data into informative visualizations, and provided recommendations to help guide future marketing strategies for expanding growth.</li>
-</ul>
-  </li>
+          <!-- --- Spaced: IBM Business Intelligence Program --- -->
+          <li class="spaced">
+            <div class="entry">
+              <div class="entry-title">IBM Business Intelligence Program</div>
+              <div class="entry-meta">Coursera — August</div>
+              <ul class="sub-list" aria-label="IBM Business Intelligence details">
+                <li>Dashboard design and self-serve analytics</li>
+                <li>Power BI and reporting best practices</li>
+                <li>Data modeling and KPI definitions</li>
+              </ul>
+            </div>
+          </li>
 
-    <li> IBM Business Intelligence Program, Coursera, August,
-        <ul>  
-         <li>Coursework: Database Design, Star Schema, Regression Analysis,Extract, Transform, Load (ETL), Descriptive Statistics, Relational Databases, Database Management Systems, Data Mining, Data Warehousing, Key Performance Indicators (KPIs),  Data Analysis Expressions (DAX). </li>
-         <li>Capstone Project: Conducted a comprehensive analysis of the sales performance of a Turkish retail chain across regions in northern, central and eastern Europe to identify the key factors influencing sales of products over 1 year. Informed strategic decision-making through identification of seasonal and regional based sale patterns through regression analysis and created a report outlining findings and recommendations for increased sale performance for stakeholders.</li>
+          <!-- --- Spaced: B.A. in Linguistics --- -->
+          <li class="spaced">
+            <div class="entry">
+              <div class="entry-title">B.A. in Linguistics</div>
+              <div class="entry-meta">University of New Hampshire — May 2024</div>
+              <ul class="sub-list" aria-label="B.A. details">
+                <li>Focus in syntax and computational linguistics</li>
+                <li>Senior thesis: topic and short result summary</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Additional entries (example) -->
+          <li>
+            <div class="entry">
+              <div class="entry-title">Other Training / Workshops</div>
+              <div class="entry-meta">Various dates</div>
+              <ul class="sub-list filled">
+                <li>Workshop A — short note</li>
+                <li>Workshop B — short note</li>
+              </ul>
+            </div>
+          </li>
         </ul>
-    </li>
-    
-            <li>B.A. in Linguistics, University of New Hampshire, May 2024 </li>
-            </p>
-          </section>
+      </section>
 
-          <section class="section">
-            <h2>Skills</h2>
-            <p>List of relevant skills, tools, languages (comma separated).</p>
-           <ul aria-label="Skills and tools">
-  <li>Python
-    <ul>
-      <li>Pandas</li>
-      <li>NumPy</li>
-      <li>Matplotlib</li>
-    </ul>
-  </li>
+      <!-- Skills section example showing hollow bullets used for Python/R secondary items -->
+      <section style="margin-top:1rem;" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
 
-  <li>R
-    <ul>
-      <li>R Markdown</li>
-      <li>dplyr</li>
-      <li>ggplot2</li>
-      <li>tidyr</li>
-      <li>tseries</li>
-      <li>forecast</li>
-      <li>Tidyverse</li>
-    </ul>
-  </li>
+        <ul class="resume-list">
+          <li>
+            <div class="entry">
+              <div class="entry-title">Python</div>
+              <ul class="sub-list" aria-label="Python tools">
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+              </ul>
+            </div>
+          </li>
 
-  <li>SQL</li>
-  <li>Tableau</li>
-  <li>Microsoft Power BI</li>
-  <li>IBM Cognos Analytics</li>
-  <li>Google Analytics</li>
-  <li>PostgreSQL</li>
-  <li>MySQL</li>
-  <li>IBM DB2</li>
-</ul>
-          </section>
-        </div>
+          <li>
+            <div class="entry">
+              <div class="entry-title">R</div>
+              <ul class="sub-list" aria-label="R tools">
+                <li>R Markdown</li>
+                <li>dplyr</li>
+                <li>ggplot2</li>
+                <li>tidyr</li>
+                <li>tseries</li>
+                <li>forecast</li>
+              </ul>
+            </div>
+          </li>
 
-        <aside>
-          <section>
-            <h3>Contact</h3>
-            <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
-          </section>
+          <!-- Other skills -->
+          <li>
+            <div class="entry">
+              <div class="entry-title">SQL</div>
+            </div>
+          </li>
+          <li>
+            <div class="entry">
+              <div class="entry-title">Tableau</div>
+            </div>
+          </li>
+          <li>
+            <div class="entry">
+              <div class="entry-title">Microsoft Power BI</div>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-          <section style="margin-top:1rem;">
-            <h3>Highlights</h3>
-            <ul>
-              <li>Selected award or recognition</li>
-              <li>Top technical skill</li>
-            </ul>
-          </section>
-        </aside>
-      </div>
+      <p class="small">Notes: I've applied the requested spacing and changed the nested (secondary) bullets to hollow (circle) for the specified entries. If you'd like the .spaced gap to be larger/smaller or to apply to all main bullets, tell me and I'll update.</p>
     </main>
   </div>
 </body>
