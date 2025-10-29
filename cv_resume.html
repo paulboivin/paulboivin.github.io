@@ -25,22 +25,23 @@
       box-shadow: 0 6px 18px rgba(11,18,32,.06);
     }
 
-    /* Navigation: centered */
-    nav { 
-      margin-bottom: 0.75rem; 
-      display: flex; 
-      justify-content: center; /* centers the links */ 
-      gap: 1rem; /* spacing between links */ 
-      flex-wrap: wrap; /* allow wrapping on narrow viewports */ 
-      align-items: center; 
-    }
-    nav a { 
-      color: #0366d6; 
-      text-decoration: none; 
-      font-weight: 500; 
-      padding: 6px 8px; /* optional — increases click target */ 
-      display: inline-block; 
-    }
+    /* Center top navigation — paste into each page's <style> block, replacing the current nav rules */
+nav {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center; /* centers the links horizontally */
+  gap: 1rem;                /* spacing between links */
+  flex-wrap: wrap;          /* allow wrapping on small screens */
+  align-items: center;
+}
+
+nav a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;        /* increases click target */
+  display: inline-block;
+}
 
     /* Heading */
     h1 { margin-top: 0; }
