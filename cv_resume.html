@@ -45,12 +45,29 @@
     /* Heading */
     h1 { margin-top: 0; }
 
-    /* Resume list styles */
-    .resume-list { list-style: none; padding-left: 0; margin: 0; }
+    /* Resume list styles (default no markers, flex+gap for spacing) */
+    .resume-list { 
+      list-style: none; 
+      padding-left: 0; 
+      margin: 0; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.5rem; /* gap between top-level bullets for lists using this layout */ 
+    }
     .resume-list > li {
       margin: 0;                /* base reset */
-      padding: 0.25rem 0;      /* small vertical padding for each main item */
-      /* .5 spacing: gap between main bullets implemented as margin-top on grouped items */
+      padding: 0.25rem 0;       /* small vertical padding retained for item internals */
+    }
+
+    /* Bulleted variant: use when you want native list markers (e.g., Skills) */
+    .resume-list.bulleted {
+      list-style-type: disc;
+      padding-left: 1.25rem; /* provide left padding for markers */
+      display: block;        /* allow native markers to render reliably */
+      gap: normal;           /* reset gap so native spacing is controlled by margins */
+    }
+    .resume-list.bulleted > li {
+      margin-bottom: 0.5rem; /* spacing between bulleted items */
     }
 
     /* Main entry block */
@@ -68,13 +85,11 @@
       margin-bottom: 0.45rem;
     }
 
-  
     .spaced {
       margin-top: 0.5rem; /* 0.5rem visual gap before this main bullet */
       padding-top: 0.5rem; /* extra safety spacing */
       border-top: 0; /* no visible rule, only space */
     }
-
 
     .sub-list {
       margin: 0.25rem 0 0.75rem 1.1rem;
@@ -112,14 +127,10 @@
     <main class="card">
       <h1>CV/Resume</h1>
 
-    
       <section aria-labelledby="education-heading">
         <h2 id="education-heading">Education & professional development</h2>
 
         <ul class="resume-list">
-         
-
-         
           <li class="spaced">
             <div class="entry">
               <div class="entry-title">Google Data Analytics Program</div>
@@ -131,7 +142,6 @@
             </div>
           </li>
 
-         
           <li class="spaced">
             <div class="entry">
               <div class="entry-title">IBM Business Intelligence Program</div>
@@ -143,7 +153,6 @@
             </div>
           </li>
 
-          <!-- --- Spaced: B.A. in Linguistics --- -->
           <li class="spaced">
             <div class="entry">
               <div class="entry-title">B.A. in Linguistics</div>
@@ -154,15 +163,14 @@
               </ul>
             </div>
           </li>
-
-          
+        </ul>
       </section>
 
-      <!-- Skills section example showing hollow bullets used for Python/R secondary items -->
+      <!-- Skills section: use bulleted top-level list so Python, R, SQL, Tableau, Power BI show native bullets -->
       <section style="margin-top:1rem;" aria-labelledby="skills-heading">
         <h2 id="skills-heading">Skills</h2>
 
-        <ul class="resume-list">
+        <ul class="resume-list bulleted">
           <li>
             <div class="entry">
               <div class="entry-title">Python</div>
@@ -188,7 +196,6 @@
             </div>
           </li>
 
-          <!-- Other skills -->
           <li>
             <div class="entry">
               <div class="entry-title">SQL</div>
@@ -207,7 +214,6 @@
         </ul>
       </section>
 
-   
     </main>
   </div>
 </body>
