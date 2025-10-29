@@ -3,14 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>paulboivin — Welcome</title>
+  <title>Paul Boivin — paulboivin</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:linear-gradient(180deg,#f6f8fa,#ffffff); color:#0b1220; }
-    .container { max-width:760px; margin:2rem auto; padding:0 1rem; }
-    .card { padding:2rem; border-radius:12px; box-shadow:0 6px 20px rgba(11,18,32,.06); background: #fff; }
-nav { margin-bottom: 0.75rem; display: flex; justify-content: center; /* centers the links / gap: 1rem; / spacing between links / flex-wrap: wrap; / allow wrapping on narrow viewports */ align-items: center; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:#f6f8fa; color:#0b1220; }
+    .container { max-width:720px; margin:2rem auto; padding:0 1rem; }
+    .card { background:#fff; border-radius:10px; padding:1.25rem; box-shadow:0 6px 18px rgba(11,18,32,.06); }
+ nav { margin-bottom: 0.75rem; display: flex; justify-content: center; /* centers the links / gap: 1rem; / spacing between links / flex-wrap: wrap; / allow wrapping on narrow viewports */ align-items: center; }
 
 nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8px; /* optional — increases click target */ display: inline-block; }
+    h1 { margin-top:0; }
+    h2 { margin-bottom:.25rem; }
+    p.small { color:#556; font-size:.95rem; }
+    ul { padding-left:1.15rem; }
+    .meta { color:#556; font-size:.95rem; margin-bottom:.75rem; }
+    .chips { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem; }
+    .chip { background:rgba(3,102,214,.06); color:#0366d6; padding:.25rem .6rem; border-radius:999px; font-size:.9rem; }
+    a.project { color:#0366d6; text-decoration:none; font-weight:600; }
   </style>
 </head>
 <body>
@@ -22,13 +30,39 @@ nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8p
     </nav>
 
     <main class="card">
-      <h1>Paul Boivin</h1>
-      <p>This is a test to ensure quality.</p>
-      <ul>
-        <li>This is a thing.</li>
-        <li>This is another thing.</li>
-      </ul>
-      <p>Docs: <a href="https://docs.github.com/en/pages">GitHub Pages guide</a></p>
+      <h1>About</h1>
+      <p class="meta">Designer & developer who builds thoughtful, accessible interfaces and small web tools. I enjoy clean UX, reliable engineering, and learning by building.</p>
+
+      <section>
+        <h2>Summary</h2>
+        <p class="small">I work across the front-end stack to design and deliver production-ready websites and apps. My focus is on simplicity, accessibility, and maintainable code. I prefer small teams, clear APIs, and projects that ship value quickly.</p>
+      </section>
+
+      <section style="margin-top:1rem;">
+        <h2>Skills</h2>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Design</span>
+          <span class="chip">Accessibility</span>
+        </div>
+      </section>
+
+      <section style="margin-top:1rem;">
+        <h2>Selected projects</h2>
+        <ul>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project One</a> — small description about what it does and the impact.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Two</a> — technical focus or interesting decision.</li>
+          <li><a class="project" href="#" target="_blank" rel="noopener">Project Three</a> — metrics or notable outcome (if any).</li>
+        </ul>
+        <p class="small">Tip: replace these placeholders with links to live sites or GitHub repos.</p>
+      </section>
+
+      <section style="margin-top:1rem;">
+        <h2>Contact</h2>
+        <p class="small">For work inquiries or quick questions, email <a href="mailto:you@example.com">you@example.com</a> or use the <a href="/contact.html">contact form</a>.</p>
+      </section>
     </main>
   </div>
 </body>
