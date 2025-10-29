@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CV/Resume — paulboivin</title>
+  <title>CV / Resume — paulboivin</title>
   <style>
     /* Base layout */
     body {
@@ -25,18 +25,22 @@
       box-shadow: 0 6px 18px rgba(11,18,32,.06);
     }
 
-    nav { margin-bottom: 0.75rem; display: flex; justify-content: center; /* centers the links / gap: 1rem; / spacing between links / flex-wrap: wrap; / allow wrapping on narrow viewports */ align-items: center; }
-
-nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8px; /* optional — increases click target */ display: inline-block; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <nav aria-label="Primary navigation">
-      <a href="/about.html">About</a>
-      <a href="/cv_resume.html">CV/Resume</a>
-      <a href="/projects.html">Projects</a>
-    </nav>
+    /* Navigation: centered */
+    nav { 
+      margin-bottom: 0.75rem; 
+      display: flex; 
+      justify-content: center; /* centers the links */ 
+      gap: 1rem; /* spacing between links */ 
+      flex-wrap: wrap; /* allow wrapping on narrow viewports */ 
+      align-items: center; 
+    }
+    nav a { 
+      color: #0366d6; 
+      text-decoration: none; 
+      font-weight: 500; 
+      padding: 6px 8px; /* optional — increases click target */ 
+      display: inline-block; 
+    }
 
     /* Heading */
     h1 { margin-top: 0; }
@@ -102,6 +106,12 @@ nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8p
 </head>
 <body>
   <div class="container">
+    <nav aria-label="Primary navigation">
+      <a href="/about.html">About</a>
+      <a href="/cv_resume.html">CV/Resume</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+
     <main class="card">
       <h1>Curriculum Vitae</h1>
 
@@ -222,6 +232,12 @@ nav a { color: #0366d6; text-decoration: none; font-weight: 500; padding: 6px 8p
           </li>
         </ul>
       </section>
+
+      <p class="small">Notes: I've applied the requested spacing and changed the nested (secondary) bullets to hollow (circle) for the specified entries. If you'd like the .spaced gap to be larger/smaller or to apply to all main bullets, tell me and I'll update.</p>
+    </main>
+  </div>
+</body>
+</html>
 
       <p class="small">Notes: I've applied the requested spacing and changed the nested (secondary) bullets to hollow (circle) for the specified entries. If you'd like the .spaced gap to be larger/smaller or to apply to all main bullets, tell me and I'll update.</p>
     </main>
